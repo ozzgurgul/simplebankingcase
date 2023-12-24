@@ -151,7 +151,7 @@
 <p>Hesap Oluşturma</p>
 
 ```html
-<img src ="screenshots/account.png" alt="">
+<img src ="screnshoots/account.png" alt="">
 ```
 
 
@@ -159,7 +159,7 @@
 <p>Müşteri Oluşturma</p>
 
 ```html
-<img src ="screenshots/user.png" alt="">
+<img src ="screnshoots/user.png" alt="">
 ```
 
 
@@ -167,6 +167,6 @@
  <p>Hesap Özeti</p>
 
 ```html
-<img src ="screenshots/transaction.png" alt="">
+<img src ="screnshoots/transaction.png" alt="">
 ```
 
