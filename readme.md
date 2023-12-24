@@ -143,7 +143,7 @@
 <p> Diyagram</p>
 
 ```html
-<img src ="screenshots/diagram.png" alt="">
+<img src ="[screenshots/diagram.png](https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/diagram.png)" alt="">
 ```
 
 
@@ -151,7 +151,7 @@
 <p>Hesap Oluşturma</p>
 
 ```html
-<img src ="screnshoots/account.png" alt="">
+<img src ="[screnshoots/account.png](https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/account.png)" alt="">
 ```
 
 
@@ -159,7 +159,7 @@
 <p>Müşteri Oluşturma</p>
 
 ```html
-<img src ="screnshoots/user.png" alt="">
+<img src ="[screnshoots/user.png](https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/user.png)" alt="">
 ```
 
 
@@ -167,6 +167,6 @@
  <p>Hesap Özeti</p>
 
 ```html
-<img src ="screnshoots/transaction.png" alt="">
+<img src ="[screnshoots/transaction.png](https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/transaction.png)https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/transaction.png" alt="">
 ```
 
