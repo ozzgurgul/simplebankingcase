@@ -142,31 +142,27 @@
 
 <p> Diyagram</p>
 
-```html
-<img src ="[screenshots/diagram.png](https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/diagram.png)" alt="">
-```
+![diagram](https://github.com/ozzgurgul/simplebanking-case/assets/76266652/85575892-637b-46a3-a7ac-7fa009c58a0b)
+
 
 
 
 <p>Hesap Oluşturma</p>
 
-```html
-<img src ="[screnshoots/account.png](https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/account.png)" alt="">
-```
+![account](https://github.com/ozzgurgul/simplebanking-case/assets/76266652/73abe107-823e-4bc8-8025-125d2f403c27)
+
 
 
 
 <p>Müşteri Oluşturma</p>
 
-```html
-<img src ="[screnshoots/user.png](https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/user.png)" alt="">
-```
+![user](https://github.com/ozzgurgul/simplebanking-case/assets/76266652/f3c0be68-d69e-45a2-a850-07333c95eff4)
+
 
 
 
  <p>Hesap Özeti</p>
 
-```html
-<img src ="[screnshoots/transaction.png](https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/transaction.png)https://github.com/ozzgurgul/simplebanking-case/blob/master/screnshoots/transaction.png" alt="">
-```
+![transaction](https://github.com/ozzgurgul/simplebanking-case/assets/76266652/b0a6f980-f85c-47e7-8bc1-b990b56e927b)
+
 
