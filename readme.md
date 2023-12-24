@@ -133,6 +133,7 @@
       <td>/v1/customer/customer/id/{id}</td>
       <td>Id ile müşteri getiren metod</td>
   </tr>
+ </table>
 
 
 
