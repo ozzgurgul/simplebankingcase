@@ -73,48 +73,25 @@ public class AccountService {
 
         Account account = this.getAccountById(request.getId());
 
-        BigDecimal balance = account.getBalance();
-        BigDecimal amount = request.getCreateTransactionRequest().getAmount();
-        BigDecimal totalBalance = BigDecimal.ZERO;
-        String transactionType = request.getCreateTransactionRequest().getTransactionType();
-
-        switch (transactionType) {
-            case "deposit":
-                totalBalance = balance.add(amount);
-                account.setBalance(totalBalance);
-                request.getCreateTransactionRequest().setTransactionStatus(TRANSACTION_STATUS_OK);
-                break;
-            case "withDraw":
-                if (balance.compareTo(amount) >= 0) {
-                    totalBalance = balance.subtract(amount);
-                    account.setBalance(totalBalance);
-                    request.getCreateTransactionRequest().setTransactionStatus(TRANSACTION_STATUS_OK);
-                } else {
-                    request.getCreateTransactionRequest().setTransactionStatus(TRANSACTION_STATUS_FAIL);
-                }
-
-                break;
-            case "billPayment":
-                if (balance.compareTo(amount) >= 0) {
-                    totalBalance = balance.subtract(amount);
-                    account.setBalance(totalBalance);
-                    request.getCreateTransactionRequest().setTransactionStatus(TRANSACTION_STATUS_OK);
-                } else {
-                    request.getCreateTransactionRequest().setTransactionStatus(TRANSACTION_STATUS_FAIL);
-                }
-
-                break;
-            default:
-                throw new UnExpectedTransactionTypeException("Unexpected value: " + transactionType);
+        TransactionDto transactionDto =transactionServiceClient.createDepositTransaction(request.getCreateTransactionRequest()).getBody();
+        BigDecimal amount = transactionDto.getAmount();
+        BigDecimal newBalance = BigDecimal.ZERO;
+        String transactionStatus;
+        newBalance = account.getBalance().add(amount);
+        if(newBalance.compareTo(BigDecimal.ZERO) >= 0){
+            transactionStatus = TRANSACTION_STATUS_OK;
+            account.setBalance(newBalance);
+        }else {
+            transactionStatus = TRANSACTION_STATUS_FAIL;
         }
-        String transactionDtoId = transactionServiceClient.createDepositTransaction(request.getCreateTransactionRequest()).getBody().getId();
+
+        String transactionDtoId = transactionDto.getId();
         account.getTransactions()
                 .add(transactionDtoId);
+
         accountRepository.save(account);
 
-        if (request.getCreateTransactionRequest().getTransactionStatus().equals(TRANSACTION_STATUS_FAIL)) {
-            throw new TransactionOperationFailedException("Insufficient balance");
-        }
+
     }
 
 

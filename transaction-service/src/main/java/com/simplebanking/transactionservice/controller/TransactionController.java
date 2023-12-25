@@ -2,6 +2,7 @@ package com.simplebanking.transactionservice.controller;
 
 import com.simplebanking.transactionservice.dto.CreateTransactionRequest;
 import com.simplebanking.transactionservice.dto.TransactionDto;
+import com.simplebanking.transactionservice.dto.UpdateTransactionDto;
 import com.simplebanking.transactionservice.service.TransactionService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -28,4 +29,8 @@ public class TransactionController {
         return ResponseEntity.ok(transactionService.getTransactionById(id));
     }
 
+    @PutMapping
+    public void updateTransactionById(@RequestBody UpdateTransactionDto request){
+        transactionService.updateTransactionById(request);
+    }
 }
