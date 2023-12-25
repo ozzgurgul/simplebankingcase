@@ -20,7 +20,7 @@ public interface TransactionServiceClient {
     ResponseEntity<TransactionDto> getTransactionById(@RequestParam String id);
 
     @PutMapping
-    void updateTransactionById(@RequestParam UpdateTransactionDto request);
+    void updateTransactionById(@RequestBody UpdateTransactionDto request);
 
 
 

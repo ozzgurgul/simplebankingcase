@@ -4,8 +4,6 @@ import com.simplebanking.accountservice.client.CustomerServiceClient;
 import com.simplebanking.accountservice.client.TransactionServiceClient;
 import com.simplebanking.accountservice.dto.*;
 import com.simplebanking.accountservice.exception.AccountNotFoundException;
-import com.simplebanking.accountservice.exception.TransactionOperationFailedException;
-import com.simplebanking.accountservice.exception.UnExpectedTransactionTypeException;
 import com.simplebanking.accountservice.model.Account;
 import com.simplebanking.accountservice.repository.AccountRepository;
 import org.springframework.stereotype.Service;
@@ -84,6 +82,9 @@ public class AccountService {
         }else {
             transactionStatus = TRANSACTION_STATUS_FAIL;
         }
+
+        UpdateTransactionDto updateTransactionDto = new UpdateTransactionDto(transactionDto.getId(),transactionStatus);
+        transactionServiceClient.updateTransactionById(updateTransactionDto);
 
         String transactionDtoId = transactionDto.getId();
         account.getTransactions()

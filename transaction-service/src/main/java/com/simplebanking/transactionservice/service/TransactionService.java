@@ -64,7 +64,7 @@ public class TransactionService {
     public TransactionDto getTransactionById(String id) {
         return transactionRepository.findById(id)
                 .map(transaction -> new TransactionDto(transaction.getId(),
-                        transaction.getCreatedDate(), transaction.getAmount(), transaction.getTransactionType(),null))
+                        transaction.getCreatedDate(), transaction.getAmount(), transaction.getTransactionType(),transaction.getTransactionStatus()))
                 .orElseThrow(() -> new TransactionNotFoundException("Transaction not found with id : " + id));
     }
 
